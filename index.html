@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html>
+    <head>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000000;
+                font-size: 13px;
+                font-family: "Lucida Grande";
+                color: #f6f6f6;
+            }
+
+            pre {
+                background: black;
+                padding: 5px;
+            }
+
+            div#container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+            div#description {
+                background: #1A1A1A;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 2;
+                padding: 20px;
+                display: none;
+            }
+
+            div#description-heading {
+                margin: -20px -20px 0 -20px;
+                padding: 20px;
+                padding-bottom: 5px;
+                border-bottom: 1px #666666 solid;
+            }
+
+            div#description-heading > h5 {
+                padding: 0;
+                margin: 0;
+                font-size: 15px;
+            }
+
+            button#close {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            button#open {
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 1;
+            }
+
+            div#description.open {
+                width: 35%;
+                bottom: 0;
+                display: block;
+            }
+
+            canvas {
+                margin: auto;
+                display: block;
+                background-color: #000000;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            button {
+                -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+                -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+                box-shadow:inset 0px 1px 0px 0px #ffffff;
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+                background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+                background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+                background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+                background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+                background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+                background-color:#ffffff;
+                -moz-border-radius:6px;
+                -webkit-border-radius:6px;
+                border-radius:6px;
+                border:1px solid #dcdcdc;
+                display:inline-block;
+                cursor:pointer;
+                color:#666666;
+                font-size:15px;
+                font-weight:bold;
+                padding:4px 10px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ffffff;
+                margin: 7px;
+            }
+            button:hover {
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+                background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+                background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+                background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+                background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+                background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+                background-color:#f6f6f6;
+            }
+            button:active {
+                position:relative;
+                top:1px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <button id="open">&gt;</button>
+            <div id="description" class="open">
+                <div id="description-heading">
+                    <h5 id="description-title"></h5>
+                    <button id="close">X</button>
+                </div>
+                <div id="description-content">
+                    <p></p>
+                </div>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+        <script src="base.js"></script>
+        <script src="RenderManager.js"></script>
+        <script src="Description.js"></script>
+        <script src="EventDispatcherService.js"></script>
+        <script src="HtmlHelper.js"></script>
+        <script src="Grid.js"></script>
+        <script src="Arrow.js"></script>
+        <script src="BasicVector.js"></script>
+        <script src="BasicMovement.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
