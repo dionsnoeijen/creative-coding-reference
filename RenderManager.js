@@ -2,10 +2,10 @@
 
 class RenderManager
 {
-    constructor() {
+    constructor(gui) {
         this.scenes = {};
         this.activeScene = null;
-
+        this.gui = gui;
         window.addEventListener('updateDescriptionText', this.onUpdateDescriptionText.bind(this));
     }
 
@@ -46,8 +46,10 @@ class RenderManager
         for (let sceneKey in this.scenes) {
             if (this.scenes.hasOwnProperty(sceneKey)) {
                 this.scenes[sceneKey].disableEvents();
+                this.scenes[sceneKey].clearGui(this.gui);
             }
         }
+        this.scenes[this.activeScene].gui(this.gui);
         this.scenes[this.activeScene].initEvents();
         this.renderDescription(key);
     }

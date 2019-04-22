@@ -17,6 +17,7 @@
             pre {
                 background: black;
                 padding: 5px;
+                overflow: scroll;
             }
 
             div#container {
@@ -33,6 +34,7 @@
                 z-index: 2;
                 padding: 20px;
                 display: none;
+                overflow: scroll;
             }
 
             div#description-heading {
@@ -125,11 +127,11 @@
             <button id="open">&gt;</button>
             <div id="description" class="open">
                 <div id="description-heading">
-                    <h5 id="description-title"></h5>
+                    <h5 id="description-title">&nbsp;</h5>
                     <button id="close">X</button>
                 </div>
                 <div id="description-content">
-                    <p></p>
+                    <p>&nbsp;</p>
                 </div>
             </div>
             <canvas id="canvas"></canvas>

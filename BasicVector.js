@@ -130,4 +130,12 @@ class BasicVector {
     getDescription() {
         return this.description;
     }
+
+    gui(gui) {
+
+    }
+
+    clearGui(gui) {
+
+    }
 }

@@ -43,8 +43,10 @@ class Arrow {
         context.strokeStyle = this.drawColor;
 
         context.fillStyle = this.drawColor;
+        context.beginPath();
         context.arc(this.v1.x, this.v1.y, 5, 0, Math.PI*2);
         context.fill();
+        context.closePath();
 
         context.beginPath();
         context.moveTo(this.v1.x, this.v1.y);
