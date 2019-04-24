@@ -11,14 +11,21 @@ function Stage() {
     const grid = new Grid();
     const gui = new dat.GUI();
 
-    const basicMovement = new BasicMovement();
-
     const renderManager = new RenderManager(gui);
     renderManager.add(BASIC_VECTOR_SCENE_KEY, new BasicVector());
-    renderManager.add(BASIC_MOVEMENT_SCENE_KEY, basicMovement);
+    renderManager.add(BASIC_MOVEMENT_SCENE_KEY, new BasicMovement());
+    renderManager.add(BASIC_VECTOR_MATH_SCENE_KEY, new BasicVectorMath());
     renderManager.enable(BASIC_VECTOR_SCENE_KEY);
 
-    let controller = gui.add(renderManager, 'activeScene', [ BASIC_VECTOR_SCENE_KEY, BASIC_MOVEMENT_SCENE_KEY ]);
+    let controller = gui.add(
+        renderManager,
+        'activeScene',
+        [
+            BASIC_VECTOR_SCENE_KEY,
+            BASIC_MOVEMENT_SCENE_KEY,
+            BASIC_VECTOR_MATH_SCENE_KEY
+        ]
+    );
     controller.onChange((value) => {
         renderManager.enable(value);
     });
